@@ -32,7 +32,7 @@ namespace H3Patcher
         {
 #if DEBUG
             if (scan)
-                Console.WriteLine($"Scanning for process {procName}.exe...");
+                Console.WriteLine($"Scanning for {procName}.exe...");
 #endif
             Process[] foundProcs;
             do

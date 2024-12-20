@@ -11,8 +11,11 @@ namespace H3Patcher
         public static void Main()
         {
             const long BASE = 0x140000000;
+            const long ADDR = BASE + 0x136E383;
             var proc = new ManagedProcess("HITMAN3", scan: true);
-            proc.WriteNops(BASE + 0x0136D6A1, 6);
+            System.Threading.Thread.Sleep(1000);
+            //proc.WriteNops(ADDR, 6);
+            proc.Write(ADDR, new byte[] { 0xE9, 0x8E, 0x00, 0x00, 0x00, 0x00 });
         }
     }
 }
